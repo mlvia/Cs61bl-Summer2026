@@ -1,10 +1,10 @@
 public class TriangleDrawer {
     public static void drawTriangle() {
-        int num = 0;
+        int size = 5;
         String result = "";
-        while (num < 3) {
+        while (size > 0) {
             result += "*";
-            num += 1;
+            size -= 1;
             System.out.println(result);
         }
     }
