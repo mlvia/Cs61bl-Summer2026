@@ -54,8 +54,8 @@ public class Point {
     
     /** Checks for equality between two Points. */
     @Override
-    public boolean equals(Object o) {
-        Point other = (Point) o;
+    public boolean equals(Object point) {
+        Point other = (Point) point;
         return (this.x == other.x) && (this.y == other.y);
     }
 }

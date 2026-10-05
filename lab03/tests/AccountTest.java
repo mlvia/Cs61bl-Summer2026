@@ -36,11 +36,11 @@ public class AccountTest {
         Account parent = new Account(1000);
         Account child = new Account(100, parent);
         assertTrue(child.withdraw(50));
-        assertTrue(50 == child.getBalance());
-        assertTrue(1000 == parent.getBalance());
+        assertEquals(50, child.getBalance());
+        assertEquals(1000, parent.getBalance());
         assertTrue(child.withdraw(55));
-        assertTrue(0 == child.getBalance());
-        assertTrue(995 == parent.getBalance());
+        assertEquals(0, child.getBalance());
+        assertEquals(995, parent.getBalance());
     }
 
     @Test
@@ -82,13 +82,13 @@ public class AccountTest {
         Account parent = new Account(300, grandparent);
         Account child = new Account(100, parent);
         assertTrue(child.withdraw(500));
-        assertTrue(0 == child.getBalance());
-        assertTrue(0 == parent.getBalance());
-        assertTrue(300 == grandparent.getBalance());
+        assertEquals(0, child.getBalance());
+        assertEquals(0, parent.getBalance());
+        assertEquals(300, grandparent.getBalance());
         assertTrue(child.withdraw(100));
-        assertTrue(0 == child.getBalance());
-        assertTrue(0 == parent.getBalance());
-        assertTrue(200 == grandparent.getBalance());
+        assertEquals(0, child.getBalance());
+        assertEquals(0, parent.getBalance());
+        assertEquals(200, grandparent.getBalance());
     }
 
     @Test
@@ -98,12 +98,12 @@ public class AccountTest {
         Account parent = new Account(5, grandparent);
         Account child = new Account(1, parent);
         assertFalse(child.withdraw(500));
-        assertTrue(1 == child.getBalance());
-        assertTrue(5 == parent.getBalance());
-        assertTrue(10 == grandparent.getBalance());
+        assertEquals(1, child.getBalance());
+        assertEquals(5, parent.getBalance());
+        assertEquals(10, grandparent.getBalance());
         assertTrue(child.withdraw(4));
-        assertTrue(0 == child.getBalance());
-        assertTrue(2 == parent.getBalance());
-        assertTrue(10 == grandparent.getBalance());
+        assertEquals(0, child.getBalance());
+        assertEquals(2, parent.getBalance());
+        assertEquals(10, grandparent.getBalance());
     }
 }
